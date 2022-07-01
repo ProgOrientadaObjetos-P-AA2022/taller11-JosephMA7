@@ -18,7 +18,8 @@ public class Principal {
         MenuNinos Ninos1 = new MenuNinos("Hamburguesa Kits", 3.75, 2.00, 2.35);
         MenuNinos Ninos2 = new MenuNinos("PapasKits", 1.75, 0.50, 2.00);
 
-        MenuEconomico Economico1 = new MenuEconomico("Combo económico de hamburguesa+paspas+hotdog+refresco", 4.75, 10);
+        MenuEconomico Economico1 = new MenuEconomico("Combo económico de "
+                + "(hamburguesa + paspas + hotdog + refresco)", 4.75, 10);
 
         MenuDia DiaMenu = new MenuDia("Chuleta a la parrilla", 5.50, 5, 3.15);
 
@@ -34,7 +35,7 @@ public class Principal {
             InventarioCarta.get(i).establecerValorMenu();
         }
 
-        Cuenta cuenta = new Cuenta("Joseph Martinez", 7, InventarioCarta);
+        Cuenta cuenta = new Cuenta("Joseph Martinez", 12, InventarioCarta);
         cuenta.establecerSubtotal();
         cuenta.establecerTotal();
 

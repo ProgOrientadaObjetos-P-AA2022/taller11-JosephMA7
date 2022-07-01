@@ -2,7 +2,7 @@ package Carta;
 
 import java.util.ArrayList;
 
-public final class Cuenta {
+public class Cuenta {
 
     private String nombUsu;
     private double iva;
@@ -63,12 +63,8 @@ public final class Cuenta {
     public String toString() {
         String cadena = String.format("Informacion Cuenta\n"
                 + "Nombre: %s\n"
-                + "Subtotal: %.2f\n"
-                + "Iva: %.2f\n\n"
                 + "Lista de Menus adquiridos\n",
-                obtenerNombreCliente(),
-                obtenerSubtotal(),
-                obtenerIVA());
+                obtenerNombreCliente());
 
         for (int i = 0; i < obtenerListaCartas().size(); i++) {
             cadena = String.format("%s"
@@ -77,8 +73,12 @@ public final class Cuenta {
                     obtenerListaCartas().get(i));
         }
 
-        cadena = String.format("\n%sTotal a Pagar: %.2f\n",
+        cadena = String.format("%sSubtotal: %.2f\n"
+                + "Iva: %.2f\n"
+                +"Total a Pagar: %.2f\n",
                 cadena,
+                obtenerSubtotal(),
+                obtenerIVA(),
                 obtenerTotal());
         return cadena;
     }
