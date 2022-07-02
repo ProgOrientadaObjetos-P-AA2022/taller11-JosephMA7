@@ -10,7 +10,6 @@ public class MenuEconomico extends Menu {
         super(cade, valIni);
         porcDesc = porcDes;
     }
-
     public void establecerDescuentoP(double n) {
         porcDesc = n;
     }

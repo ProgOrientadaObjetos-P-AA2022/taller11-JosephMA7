@@ -10,10 +10,16 @@ public class Cuenta {
     private double subtotal;
     private double total;
 
-    public Cuenta(String nomusu, double iva2, ArrayList<Menu> invCart) {
-        nombUsu = nomusu;
+    public Cuenta(String nomUsu, double iva2, ArrayList<Menu> invCart) {
+        nombUsu = nomUsu;
         establecerIva(iva2);
         establecerInventarioCarta(invCart);
+        subtotal = 0;
+    }
+     public Cuenta(String nomUsu,  ArrayList<Menu> lista, double iva) {
+        nombUsu = nomUsu;
+        establecerIva(iva);
+        establecerInventarioCarta(lista);
         subtotal = 0;
     }
 

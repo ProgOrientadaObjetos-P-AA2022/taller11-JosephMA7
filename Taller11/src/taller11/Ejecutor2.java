@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package taller11;
 
 import Carta.Cuenta;
+import Carta.Menu;
+import Menus.MenuCarta;
+import Menus.MenuDia;
+import Menus.MenuEconomico;
+import Menus.MenuNinos;
 import java.util.ArrayList;
 
-/**
- *
- * @author Usuario
- */
 public class Ejecutor2 {
 
     public static void main(String[] args) {
@@ -35,23 +31,50 @@ public class Ejecutor2 {
         {"Carta 004", "9", "2.5", "2.9", "5"},};
 
         // Lista de Menus
-        ArrayList lista = new ArrayList<>();
+        ArrayList<Menu> lista = new ArrayList<>();
 
         /* Agregar un proceso para generar objetos de tipo Menu Carta, Día, 
         Economico y Niño*. Cada arreglo datos, se corresponde a un tipo de Menú.
         Iterar y crear los objetos según corresponda. Cada objeto generado, 
         agregar al ArrayList lista*/
         // Inicio de solución
-        // Fin de solución
+        for (int i = 0; i < datos001.length; i++) {
+            MenuNinos menuNinos = new MenuNinos(datos001[i][0],
+                    Double.parseDouble(datos001[i][1]),
+                    Double.parseDouble(datos001[i][2]),
+                    Double.parseDouble(datos001[i][3]));
+            lista.add(menuNinos);
+        }
+
+        for (int i = 0; i < datos002.length; i++) {
+            MenuEconomico m = new MenuEconomico(datos002[i][0],
+                    Double.parseDouble(datos002[i][1]),
+                    Double.parseDouble(datos002[i][2]));
+            lista.add(m);
+        }
+        for (int i = 0; i < datos003.length; i++) {
+            MenuDia menuDia = new MenuDia(datos003[i][0],
+                    Double.parseDouble(datos003[i][1]),
+                    Double.parseDouble(datos003[i][2]),
+                    Double.parseDouble(datos003[i][3]));
+            lista.add(menuDia);
+        }
+        for (int i = 0; i < datos004.length; i++) {
+            MenuCarta menuCarta = new MenuCarta(datos004[i][0],
+                    Double.parseDouble(datos004[i][1]),
+                    Double.parseDouble(datos004[i][2]),
+                    Double.parseDouble(datos004[i][3]),
+                    Double.parseDouble(datos004[i][4]));
+            lista.add(menuCarta);
+        }
+
         for (int i = 0; i < lista.size(); i++) {
             lista.get(i).establecerValorMenu();
         }
-
-        // Un objeto de tipo Cuenta
-        Cuenta miCuenta = new Cuenta("Luis Andrade", lista, 10);
-        miCuenta.establecerSubtotal();
-        miCuenta.establecerTotal();
-        System.out.printf("%s\n", miCuenta);
+        Cuenta cuenta = new Cuenta("Camilo Godoy\n", lista, 10);
+        cuenta.establecerSubtotal();
+        cuenta.establecerTotal();
+        System.out.printf("%s\n", cuenta);
 
     }
 }
